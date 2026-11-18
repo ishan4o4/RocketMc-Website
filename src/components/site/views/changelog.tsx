@@ -31,7 +31,7 @@ export function ChangelogView() {
                 <span className="text-gradient-ember">flight log.</span>
               </h1>
               <p className="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-stone-600">
-                Highlights from v3.5 through v7.0. Full per-file notes live on
+                Highlights from v0.3.5 through v1.0. Full per-file notes live on
                 GitHub with each release tag.
               </p>
             </div>
@@ -101,7 +101,7 @@ export function ChangelogView() {
               Older history lives on the launchpad.
             </p>
             <p className="mx-auto mt-2 max-w-md text-[14px] leading-relaxed text-stone-600">
-              Pre-3.5 releases predate the public workspace. The full commit
+              Pre-0.3.5 releases predate the public workspace. The full commit
               history is open on GitHub from day one.
             </p>
             <a

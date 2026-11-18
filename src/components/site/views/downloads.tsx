@@ -53,14 +53,14 @@ const INSTALL_METHODS = [
     code: `docker run -d --name rocketmc \\
   -p 25565:25565 -p 19132:19132/udp \\
   -v $(pwd)/data:/data \\
-  ghcr.io/rocketmc/rocketmc:7.0.0`,
+  ghcr.io/rocketmc/rocketmc:1.0.0`,
     lang: "bash" as const,
   },
   {
     id: "manual",
     label: "Binary",
     code: `# grab the archive for your platform below
-tar -xzf rocketmc-7.0.0-linux-x86_64.tar.gz
+tar -xzf rocketmc-1.0.0-linux-x86_64.tar.gz
 ./rocketmc start`,
     lang: "bash" as const,
   },

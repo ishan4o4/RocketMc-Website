@@ -195,7 +195,7 @@ export function DocsView({ sub }: { sub?: string | null }) {
                 shipped version
               </p>
               <p className="mt-2 font-mono text-[13px] font-semibold text-heading">
-                rocketmc 7.0.0 · 26.3
+                rocketmc 1.0.0 · 26.3
               </p>
               <p className="mt-1 text-[12px] leading-relaxed text-stone-500">
                 Docs follow the current stable build. Older guides live on

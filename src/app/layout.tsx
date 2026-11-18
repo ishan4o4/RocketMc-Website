@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s · RocketMC",
   },
   description:
-    "RocketMC is a Minecraft server engine written in Rust. Vanilla 26.3 'Wilderness Bound' parity, built-in Java + Bedrock support, PaperMC-style exploit protections and a native Rust plugin API — no JVM required.",
+    "RocketMC is a Minecraft server engine written in Rust. Vanilla 26.3 'Wilderness Bound' parity, built-in Java + Bedrock support, PaperMC-style exploit protections and a Rust plugin API (WebAssembly or native) — no JVM required.",
   keywords: [
     "RocketMC",
     "Minecraft server",
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
     siteName: "RocketMC",
     title: "RocketMC — The high-performance Minecraft server, written in Rust",
     description:
-      "Vanilla 26.3 parity, built-in Java + Bedrock support, PaperMC-style exploit protections and a native Rust plugin API. No JVM required.",
+      "Vanilla 26.3 parity, built-in Java + Bedrock support, PaperMC-style exploit protections and a Rust plugin API (WebAssembly or native). No JVM required.",
   },
   twitter: {
     card: "summary_large_image",
     title: "RocketMC — The high-performance Minecraft server, written in Rust",
     description:
-      "Vanilla 26.3 parity, built-in Java + Bedrock support, exploit protections and a native Rust plugin API. No JVM required.",
+      "Vanilla 26.3 parity, built-in Java + Bedrock support, exploit protections and a Rust plugin API (WebAssembly or native). No JVM required.",
     creator: "@rocketmc_dev",
   },
   robots: {
@@ -116,9 +116,9 @@ const jsonLd = {
       name: "RocketMC",
       applicationCategory: "ServerApplication",
       operatingSystem: "Linux, macOS, Windows",
-      softwareVersion: "7.0.0",
+      softwareVersion: "1.0.0",
       description:
-        "A Minecraft server engine written in Rust with vanilla 26.3 parity, built-in Java and Bedrock protocol support, PaperMC-style exploit protections and a native Rust plugin API.",
+        "A Minecraft server engine written in Rust with vanilla 26.3 parity, built-in Java and Bedrock protocol support, PaperMC-style exploit protections and a Rust plugin API (WebAssembly or native).",
       offers: {
         "@type": "Offer",
         price: "0",

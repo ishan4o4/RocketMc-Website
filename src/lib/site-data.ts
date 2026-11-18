@@ -21,7 +21,7 @@ export const GITHUB_URL = "https://github.com/RocketMC-Team/rocketmc";
 export const DISCORD_URL = "https://discord.gg/rocketmc";
 
 export const LATEST = {
-  version: "7.0.0",
+  version: "1.0.0",
   codename: "Ignition",
   date: "2026-11-18",
   mcVersion: "26.3 “Wilderness Bound”",
@@ -93,7 +93,7 @@ export const FEATURES: Feature[] = [
   {
     tag: "05 / API",
     title: "A plugin API in Rust",
-    body: "Write plugins against typed crates with a real event bus — down to niche events like WardenAngerChangeEvent that other platforms never fire.",
+    body: "Write plugins in Rust — sandboxed WebAssembly components or native libraries — against 270+ typed events, down to niche ones like WardenAngerChangeEvent that other platforms never fire.",
     span: "normal",
     accent: "flame",
   },
@@ -114,7 +114,7 @@ export const PERF_GROUPS = [
     better: "high" as const,
     unit: " TPS",
     rows: [
-      { name: "RocketMC 7.0", value: 20.0, max: 20, primary: true },
+      { name: "RocketMC 1.0", value: 20.0, max: 20, primary: true },
       { name: "Legacy Java fork", value: 15.2, max: 20, primary: false },
       { name: "Vanilla 26.3", value: 11.6, max: 20, primary: false },
     ],
@@ -126,7 +126,7 @@ export const PERF_GROUPS = [
     better: "low" as const,
     unit: " GB",
     rows: [
-      { name: "RocketMC 7.0", value: 1.4, max: 7, primary: true },
+      { name: "RocketMC 1.0", value: 1.4, max: 7, primary: true },
       { name: "Legacy Java fork", value: 3.9, max: 7, primary: false },
       { name: "Vanilla 26.3", value: 6.2, max: 7, primary: false },
     ],
@@ -138,7 +138,7 @@ export const PERF_GROUPS = [
     better: "high" as const,
     unit: " ch/s",
     rows: [
-      { name: "RocketMC 7.0", value: 812, max: 900, primary: true },
+      { name: "RocketMC 1.0", value: 812, max: 900, primary: true },
       { name: "Legacy Java fork", value: 214, max: 900, primary: false },
       { name: "Vanilla 26.3", value: 96, max: 900, primary: false },
     ],
@@ -147,7 +147,7 @@ export const PERF_GROUPS = [
 
 export const TERMINAL_LINES = [
   { text: "$ curl -fsSL https://get.rocketmc.dev | sh", tone: "cmd" as const },
-  { text: "→ downloading rocketmc 7.0.0 (linux-x86_64)", tone: "dim" as const },
+  { text: "→ downloading rocketmc 1.0.0 (linux-x86_64)", tone: "dim" as const },
   { text: "→ verifying sha256 … ok", tone: "dim" as const },
   { text: "→ installed to /usr/local/bin/rocketmc", tone: "ok" as const },
   { text: "$ rocketmc start", tone: "cmd" as const },
@@ -188,7 +188,7 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
-    version: "7.0.0",
+    version: "1.0.0",
     codename: "Ignition",
     date: "2026-11-18",
     channel: "stable",
@@ -206,7 +206,7 @@ export const RELEASES: Release[] = [
     ],
   },
   {
-    version: "6.3.0",
+    version: "0.6.3",
     codename: "Parity",
     date: "2026-10-30",
     channel: "stable",
@@ -223,7 +223,7 @@ export const RELEASES: Release[] = [
     ],
   },
   {
-    version: "5.9.0",
+    version: "0.5.9",
     codename: "Deep Watch",
     date: "2026-09-14",
     channel: "stable",
@@ -239,7 +239,7 @@ export const RELEASES: Release[] = [
     ],
   },
   {
-    version: "4.2.0",
+    version: "0.4.2",
     codename: "Momentum",
     date: "2026-08-02",
     channel: "stable",
@@ -255,7 +255,7 @@ export const RELEASES: Release[] = [
     ],
   },
   {
-    version: "3.5.0",
+    version: "0.3.5",
     codename: "Liftoff",
     date: "2026-06-21",
     channel: "legacy",
@@ -283,7 +283,7 @@ export interface BuildRow {
 export const BUILDS: BuildRow[] = [
   {
     build: 47,
-    version: "7.0.0",
+    version: "1.0.0",
     date: "2026-11-18",
     channel: "stable",
     mc: "26.3",
@@ -293,7 +293,7 @@ export const BUILDS: BuildRow[] = [
   },
   {
     build: 46,
-    version: "7.0.0-rc.2",
+    version: "1.0.0-rc.2",
     date: "2026-11-12",
     channel: "stable",
     mc: "26.3",
@@ -303,7 +303,7 @@ export const BUILDS: BuildRow[] = [
   },
   {
     build: 45,
-    version: "7.0.0-rc.1",
+    version: "1.0.0-rc.1",
     date: "2026-11-04",
     channel: "stable",
     mc: "26.3",
@@ -313,7 +313,7 @@ export const BUILDS: BuildRow[] = [
   },
   {
     build: 38,
-    version: "6.3.0",
+    version: "0.6.3",
     date: "2026-10-30",
     channel: "legacy",
     mc: "26.3",
@@ -323,7 +323,7 @@ export const BUILDS: BuildRow[] = [
   },
   {
     build: 4,
-    version: "7.1.0-alpha.1",
+    version: "1.1.0-alpha.1",
     date: "2026-11-15",
     channel: "snapshot",
     mc: "26.4-eap",
@@ -338,7 +338,7 @@ export const PLATFORMS = [
     id: "linux-x86_64",
     label: "Linux",
     arch: "x86_64",
-    file: "rocketmc-7.0.0-linux-x86_64.tar.gz",
+    file: "rocketmc-1.0.0-linux-x86_64.tar.gz",
     size: "14.8 MB",
     sha: "9f2c1a6e04b7d3c8f5a1e9b2d7c4a8e3f6b0d2c5a9e7f1b4d8c3a6e0f2b5d9c1",
   },
@@ -346,7 +346,7 @@ export const PLATFORMS = [
     id: "linux-aarch64",
     label: "Linux",
     arch: "aarch64",
-    file: "rocketmc-7.0.0-linux-aarch64.tar.gz",
+    file: "rocketmc-1.0.0-linux-aarch64.tar.gz",
     size: "13.9 MB",
     sha: "4c8e2b7a1d9f6e3c0a5b8d2f7e4c9a1b6d3f8e2c5a0b7d4f9e6c3a8b1d4f7e2c",
   },
@@ -354,7 +354,7 @@ export const PLATFORMS = [
     id: "macos-aarch64",
     label: "macOS",
     arch: "Apple silicon",
-    file: "rocketmc-7.0.0-macos-aarch64.tar.gz",
+    file: "rocketmc-1.0.0-macos-aarch64.tar.gz",
     size: "14.2 MB",
     sha: "7e1f4c9b2d8a5e3f0c6b9d4a7e1f8c2b5d9a3e6f0c7b4d8a1e5f9c2b6d3a8e5f",
   },
@@ -362,7 +362,7 @@ export const PLATFORMS = [
     id: "windows-x86_64",
     label: "Windows",
     arch: "x86_64",
-    file: "rocketmc-7.0.0-windows-x86_64.zip",
+    file: "rocketmc-1.0.0-windows-x86_64.zip",
     size: "16.3 MB",
     sha: "2b6d9f3e7a1c5e8b4f0d2a9c6e3f7b1d8a4c0e9f5b2d8a6c3e7f1b9d4a5c8e2f",
   },
@@ -469,7 +469,7 @@ export const FAQ = [
   },
   {
     q: "Are plugins written in Rust or Java?",
-    a: "RocketMC plugins are Rust crates compiled against the rocketmc-api crate. You get typed events (including niche ones like WardenAngerChangeEvent), a shared event bus, and cargo test support out of the box.",
+    a: "Rust. Plugins can be WebAssembly components (sandboxed in wasmtime, permission-gated, built with the rocketmc-plugin-api crate or any language that targets the component model) or native Rust libraries (.so / .dll / .dylib) loaded in-process through the #[plugin_impl] macros. Bukkit/Fabric Java plugins are not supported.",
   },
   {
     q: "What does “vanilla parity” mean concretely?",

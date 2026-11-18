@@ -15,6 +15,7 @@ const KIND_STYLES: Record<ApiItem["kind"], string> = {
   fn: "bg-cream text-ember-800 ring-ember-500/20",
   mod: "bg-muted text-stone-600 ring-stone-400/30",
   type: "bg-stone-100 text-stone-600 ring-stone-400/30",
+  macro: "bg-cream text-ember-800 ring-ember-500/20",
 };
 
 function ItemCard({ item }: { item: ApiItem }) {
@@ -35,13 +36,15 @@ function ItemCard({ item }: { item: ApiItem }) {
         <h3 className="font-mono text-[17px] font-semibold tracking-tight text-heading">
           {item.name}
         </h3>
-        <span className="ml-auto rounded-full bg-muted px-2.5 py-0.5 font-mono text-[10.5px] text-stone-500">
-          since {item.since}
-        </span>
+        {item.since && (
+          <span className="ml-auto rounded-full bg-muted px-2.5 py-0.5 font-mono text-[10.5px] text-stone-500">
+            since {item.since}
+          </span>
+        )}
       </div>
 
       <div className="mt-4">
-        <CodeBlock code={item.signature} lang="rust" title={`${item.name.toLowerCase()}.rs`} dense />
+        <CodeBlock code={item.signature} lang={item.lang ?? "rust"} title={`${item.name.toLowerCase()}.rs`} dense />
       </div>
 
       <p className="mt-4 text-[14.5px] leading-relaxed text-stone-700">
@@ -120,14 +123,15 @@ export function ApiView({ sub }: { sub?: string | null }) {
         <Reveal>
           <Kicker>api reference</Kicker>
           <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-heading sm:text-5xl">
-            Typed crates,{" "}
+            Plugin API,{" "}
             <span className="text-gradient-ember">documented.</span>
           </h1>
           <p className="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-stone-600">
-            The plugin-facing surface for RocketMC {crate.version} — {totalItems}{" "}
-            documented items across {API_CRATES.length} crates. Signatures are
-            pulled from the workspace; examples compile against{" "}
-            <span className="font-mono text-[14px]">rocketmc-api 7.0.0</span>.
+            Mapped from the workspace source — {totalItems} documented items
+            across {API_CRATES.length} sections. Plugins are written in
+            Rust, either as sandboxed WebAssembly components (
+            <span className="font-mono text-[14px]">rocketmc-plugin-api</span>)
+            or as native in-process libraries.
           </p>
         </Reveal>
 
@@ -168,7 +172,7 @@ export function ApiView({ sub }: { sub?: string | null }) {
                     {c.name}
                   </span>
                   <span className="mt-0.5 block font-mono text-[10px] text-stone-400">
-                    v{c.version} · {c.items.length} items
+                    {c.version.startsWith("@") ? c.version : `v${c.version}`} · {c.items.length} items
                   </span>
                 </button>
               ))}
@@ -180,10 +184,15 @@ export function ApiView({ sub }: { sub?: string | null }) {
                 adding a plugin
               </p>
               <p className="mt-2 text-[12.5px] leading-relaxed text-stone-600">
-                Depend on <span className="font-mono">rocketmc-api</span> in
-                your crate manifest, implement{" "}
-                <span className="font-mono">Plugin</span>, and register it with{" "}
-                <span className="font-mono">--plugin ./target/release/yourplug.so</span>.
+                <strong>WASM:</strong> depend on{" "}
+                <span className="font-mono">rocketmc-plugin-api</span> in a{" "}
+                <span className="font-mono">cdylib</span> crate, implement{" "}
+                <span className="font-mono">Plugin</span>, call{" "}
+                <span className="font-mono">register_plugin!</span>, build a WASM
+                component. <strong>Native:</strong> use{" "}
+                <span className="font-mono">#[plugin_impl]</span> and build a
+                shared library. Drop the file into the server&apos;s{" "}
+                <span className="font-mono">plugins/</span> folder.
               </p>
             </div>
           </aside>
@@ -232,7 +241,7 @@ export function ApiView({ sub }: { sub?: string | null }) {
                     </span>
                     <div>
                       <h2 className="font-mono text-lg font-semibold">{crate.name}</h2>
-                      <p className="font-mono text-[11px] text-stone-400">v{crate.version}</p>
+                      <p className="font-mono text-[11px] text-stone-400">{crate.version.startsWith("@") ? crate.version : `v${crate.version}`}</p>
                     </div>
                   </div>
                   <p className="mt-4 text-[14px] leading-relaxed text-stone-300">

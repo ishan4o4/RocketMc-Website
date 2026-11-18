@@ -43,7 +43,7 @@ cargo install --git https://github.com/RocketMC-Team/rocketmc rocketmc
 
 # verify
 rocketmc --version
-# rocketmc 7.0.0 (26.3 "Wilderness Bound", protocol 777)`,
+# rocketmc 1.0.0 (26.3 "Wilderness Bound", protocol 777)`,
       },
       {
         kind: "p",
@@ -281,7 +281,7 @@ rider_pairs = true`,
           "Map paper.yml global settings to [exploits] — names match with kebab-case aliases",
           "Vanilla datapacks load through the generated registry pipeline",
           "Permission plugins: RocketMC ships its own permission bridge for LuckPerms-style stores",
-          "Plugin jars do not carry over — RocketMC plugins are Rust crates; see the API reference",
+          "Plugin jars do not carry over — RocketMC plugins are WebAssembly components or native Rust libraries; see the API reference",
         ],
       },
       {

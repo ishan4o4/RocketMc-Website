@@ -139,7 +139,7 @@ export function CommunityView() {
                 </h2>
                 <p className="mt-3 text-[14px] leading-relaxed text-stone-300">
                   Share your server on Discord and get a profile badge in the
-                  showcase channel. Networks running v7 or newer get featured
+                  showcase channel. Networks running v1 or newer get featured
                   in the next release notes.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">

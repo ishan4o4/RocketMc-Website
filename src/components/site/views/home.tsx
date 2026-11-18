@@ -499,7 +499,7 @@ function ConfigShowcase() {
 const BOSS_CARDS = [
   {
     icon: Brain,
-    version: "v5.9.0",
+    version: "v0.5.9",
     name: "Warden",
     points: [
       "Per-target anger manager, 0–150 with vanilla NBT persistence",
@@ -509,7 +509,7 @@ const BOSS_CARDS = [
   },
   {
     icon: Swords,
-    version: "v7.0.0",
+    version: "v1.0.0",
     name: "Ender Dragon",
     points: [
       "Crystal healing beams rendered at full vanilla range",
@@ -519,7 +519,7 @@ const BOSS_CARDS = [
   },
   {
     icon: Skull,
-    version: "v5.9.0",
+    version: "v0.5.9",
     name: "Wither",
     points: [
       "Blue skulls fire on the powered rule, not a 0.1% roll",
